@@ -24,13 +24,13 @@
   display:flex;
 }
 
-.space {
+.space-col {
   width:20%;
   height:100%;
   border:1px solid black;
 }
 
-.ship {
+.ship-col {
   width:20%;
   height:100%;
   border:1px solid black;
