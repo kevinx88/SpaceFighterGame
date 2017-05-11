@@ -35,3 +35,74 @@
   height:100%;
   border:1px solid black;
 }
+
+#rock {
+  width:20px;
+  height:20px;
+  background-color:black;
+  margin:20px auto;
+}
+
+#ship {
+  width:60px;
+  height:30px;
+  background-color:black;
+  position:absolute;
+}
+
+#laser {
+  width:3px;
+  height:30px;
+  background-color:black;
+  position:absolute;
+}
+
+#laser[data-column='1'] {
+  top:560px;
+  right:520px;
+}
+
+#laser[data-column='2'] {
+  top:560px;
+  right:640px;
+}
+
+#laser[data-column='3'] {
+  top:560px;
+  right:760px;
+}
+
+#laser[data-column='4'] {
+  top:560px;
+  right:880px;
+}
+
+#laser[data-column='5'] {
+  top:560px;
+  right:1000px;
+}
+
+#ship[data-column='1'] {
+  top:580px;
+  right:490px;
+}
+
+#ship[data-column='2'] {
+  top:580px;
+  right:610px;
+}
+
+#ship[data-column='3'] {
+  top:580px;
+  right:730px;
+}
+
+#ship[data-column='4'] {
+  top:580px;
+  right:850px;
+}
+
+#ship[data-column='5'] {
+  top:580px;
+  right:970px;
+}

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Project 1: Space Fighter</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
     <script src="app.js""></script>
   </head>
   <body>
@@ -14,14 +14,17 @@
         <div class="space-col" id="space-two"></div>
         <div class="space-col" id="space-three"></div>
         <div class="space-col" id="space-four"></div>
-        <div class="space-col" id="space-five"><div class="rock"></div></div>
+        <div class="space-col" id="space-five">
+          <div class="space-object" id="rock"></div>
+          <div class="spaceship" id="laser" data-column="1"></div>
+        </div>
       </div>
       <div class="row-two">
         <div class="ship-col" id="ship-col-one"></div>
         <div class="ship-col" id="ship-col-two"></div>
         <div class="ship-col" id="ship-col-three"></div>
         <div class="ship-col" id="ship-col-four"></div>
-        <div class="ship-col" id="ship-col-five"><div class="ship"></div></div>
+        <div class="ship-col" id="ship-col-five"><div class="spaceship" id="ship" data-column="1"></div></div>
       </div>
     </div>
     <aside class="stats">
