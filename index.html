@@ -8,29 +8,33 @@
     <script src="app.js""></script>
   </head>
   <body>
-    <div class="container">
-      <div class="row-one">
-        <div class="space-col" id="space-one"></div>
-        <div class="space-col" id="space-two"></div>
-        <div class="space-col" id="space-three"></div>
-        <div class="space-col" id="space-four"></div>
-        <div class="space-col" id="space-five">
-          <div class="space-object" id="rock"></div>
-          <div class="spaceship" id="laser" data-column="1"></div>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row-one">
+          <div class="space-col" id="space-one"></div>
+          <div class="space-col" id="space-two"></div>
+          <div class="space-col" id="space-three"></div>
+          <div class="space-col" id="space-four"></div>
+          <div class="space-col" id="space-five">
+            <div class="space-object" id="rock"></div>
+            <div class="spaceship" id="laser" data-column="1"></div>
+          </div>
+        </div>
+        <div class="row-two">
+          <div class="ship-col" id="ship-col-one"></div>
+          <div class="ship-col" id="ship-col-two"></div>
+          <div class="ship-col" id="ship-col-three"></div>
+          <div class="ship-col" id="ship-col-four"></div>
+          <div class="ship-col" id="ship-col-five"><div class="spaceship" id="ship" data-column="1"></div></div>
         </div>
       </div>
-      <div class="row-two">
-        <div class="ship-col" id="ship-col-one"></div>
-        <div class="ship-col" id="ship-col-two"></div>
-        <div class="ship-col" id="ship-col-three"></div>
-        <div class="ship-col" id="ship-col-four"></div>
-        <div class="ship-col" id="ship-col-five"><div class="spaceship" id="ship" data-column="1"></div></div>
-      </div>
+      <aside class="stats-box">
+        <div class="start-game">Start</div>
+        <div class="player">Player 1</div>
+        <div class="score"></div>
+        <div class="timer">00:00.00</div>
+        <div class="instruction"></div>
+      </aside>
     </div>
-    <aside class="stats">
-      <div class="player-score"></div>
-      <div class="timer-turn"></div>
-      <div class="instruction"></div>
-    </aside>
   </body>
 </html>
