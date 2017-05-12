@@ -87,7 +87,7 @@ $(document).ready(function() {
   });
 
 
-
+/*
   $(document).on('keydown', function(event) {
 
       setInterval(function() {
@@ -108,6 +108,24 @@ $(document).ready(function() {
       }, 50);
 
   });
+*/
+
+  var pixel = 75;
+
+    document.addEventListener('keydown', function(event) {
+
+        setInterval(function() {
+
+          if (event.which === 32) {
+
+            var laserTop = document.querySelector('#laser').style.top;
+
+            document.querySelector('#laser').setAttribute('style', `top:${pixel}px`);
+
+          }
+        }, 50);
+
+    });
 
 
 
