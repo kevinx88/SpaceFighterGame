@@ -95,14 +95,14 @@ $(document).ready(function() {
         if (event.which === 32) {
 
           var laserLimit = $('#laser').css('top');
-          while (parseInt(laserLimit) > 0) {
+          // while (parseInt(laserLimit) > 0) {
 
             $('#laser').animate({
               'top': '-=50px'
             });
 
-            laserLimit = parseInt(laserLimit) + parseInt(laserLimit) + '';
-          }
+          //   laserLimit = parseInt(laserLimit) + parseInt(laserLimit) + '';
+          // }
 
         }
       }, 50);
