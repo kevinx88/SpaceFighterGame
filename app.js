@@ -1,12 +1,11 @@
 $(document).ready(function() {
 
-  // Main Container Aliases
+
   var ship = document.querySelector('#ship');
   var laser = document.querySelector('#laser');
   var shipCol = document.querySelectorAll('.ship-col');
   var spaceCol = document.querySelectorAll('.space-col');
   var rock = document.querySelector('#rock');
-  // End of Main Container Aliases
 
   /*----- Main Game Section -----*/
   laser.setAttribute('data-column', '1');
@@ -17,7 +16,7 @@ $(document).ready(function() {
   var interval = setInterval(function() {
     turnNo += 1;
 
-    if (turnNo === 5) {          //code style here learned
+    if (turnNo === 2) {          //code style here learned
       clearInterval(interval);   //from stackoverflow
     }                            //
 
@@ -47,9 +46,12 @@ $(document).ready(function() {
   /*----- End of Main Game Section -----*/
 
 
-  var start = document.querySelector('.start-game');
 
-  // Timer Section
+  var start = document.querySelector('.start-game');
+  var player = document.querySelector('.player');
+  var turn = document.querySelector('.turn');
+  var score = document.querySelector('.score');
+
   var timer = document.querySelector('.timer');
   var time = 100;
   var intervalId = null;
@@ -68,32 +70,45 @@ $(document).ready(function() {
     return `0${min}:0${sec}.${dec}0`;
   }
 
+
   start.addEventListener("click", function() {
-    if (!intervalId) {
-      intervalId = window.setInterval(function() {
-        if (time === 1) {
-          clearInterval(intervalId);
-        }
-        time -= 1;
-        timer.textContent = timeToStr(time);
-      }, 10);
-    }
+
+      if (!intervalId) {
+        intervalId = window.setInterval(function() {
+          if (time === 1) {
+            clearInterval(intervalId);
+          }
+
+          time -= 1;
+          timer.textContent = timeToStr(time);
+        }, 10);
+      }
+
   });
 
 
-  // $stop.on("click", function() {
-  //   // Check stopwatch state to determine if it is running or not
-  //   if (intervalId) {
-  //     window.clearInterval(intervalId);
-  //     intervalId = null;
-  //   }
-  // }); // End stop event handler
 
+  $(document).on('keydown', function(event) {
 
+      setInterval(function() {
 
+        if (event.which === 32) {
 
+          var laserLimit = $('#laser').css('top');
+          while (parseInt(laserLimit) > 0) {
 
-  // End of Timer Section
+            $('#laser').animate({
+              'top': '-=50px'
+            });
+
+            laserLimit = parseInt(laserLimit) + parseInt(laserLimit) + '';
+          }
+
+        }
+      }, 50);
+
+  });
+
 
 
 });
