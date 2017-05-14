@@ -7,7 +7,7 @@ $(document).ready(function() {
   var spaceCol = document.querySelectorAll('.space-col');
   var rock = document.querySelector('#rock');
 
-  /*----- Main Game Section -----*/
+  /*---------- Main Game Section ----------*/
   laser.setAttribute('data-column', '1');
   ship.setAttribute('data-column', '1');
 
@@ -16,13 +16,19 @@ $(document).ready(function() {
   var interval = setInterval(function() {
     turnNo += 1;
 
-    if (turnNo === 2) {          //code style here learned
+    if (turnNo === 5) {          //code style here learned
       clearInterval(interval);   //from stackoverflow
     }                            //
 
     var randomNo = Math.floor(Math.random() * 5);
     spaceCol[randomNo].appendChild(rock);
-  }, 500);
+
+    var laserPosition = document.querySelector('#laser').getAttribute('data-column');
+    var n = document.querySelector('#rock').parentNode.id[6];
+    rock.setAttribute('data-column', n);
+  }, 50);
+
+
 
   document.addEventListener('keydown', function(event) {
     var leftKey = event.which === 37;
@@ -43,7 +49,10 @@ $(document).ready(function() {
       ship.setAttribute('data-column', col);
     }
   });
-  /*----- End of Main Game Section -----*/
+
+
+
+  /*---------- End of Main Game Section ----------*/
 
 
 
@@ -53,7 +62,7 @@ $(document).ready(function() {
   var score = document.querySelector('.score');
 
   var timer = document.querySelector('.timer');
-  var time = 100;
+  var time = 0;
   var intervalId = null;
 
   var timeToStr = function(timeVal) {
@@ -67,7 +76,7 @@ $(document).ready(function() {
 
       var dec = tempTime;
 
-    return `0${min}:0${sec}.${dec}0`;
+    return sec < 10? `0${min}:0${sec}.${dec}0` : `${min}:${sec}.${dec}0`;
   }
 
 
@@ -75,11 +84,11 @@ $(document).ready(function() {
 
       if (!intervalId) {
         intervalId = window.setInterval(function() {
-          if (time === 1) {
+          if (time === 100000) {
             clearInterval(intervalId);
           }
 
-          time -= 1;
+          time += 1;
           timer.textContent = timeToStr(time);
         }, 10);
       }
@@ -110,22 +119,35 @@ $(document).ready(function() {
   });
 */
 
+
   var pixel = 75;
 
-    document.addEventListener('keydown', function(event) {
+  document.addEventListener('keydown', function(event) {
 
-        setInterval(function() {
+    setInterval(function() {
 
-          if (event.which === 32) {
+      if (event.which === 32) {
 
-            var laserTop = document.querySelector('#laser').style.top;
+        var laserTop = document.querySelector('#laser').style.top;
 
-            document.querySelector('#laser').setAttribute('style', `top:${pixel}px`);
+        document.querySelector('#laser').setAttribute('style', `top:${pixel}px`);
 
-          }
-        }, 50);
+        onImpact();
 
-    });
+      }
+    }, 50);
+
+
+
+    var alienPosition = document.querySelector('#rock').getAttribute('data-column');
+
+    function onImpact() {
+      if (6 - parseInt(document.querySelector('#laser').getAttribute('data-column')) === parseInt(document.querySelector('#rock').getAttribute('data-column'))) {
+        laser.setAttribute('data-column', '6');
+      }
+    }
+
+  });
 
 
 

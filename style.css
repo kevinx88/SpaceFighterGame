@@ -43,8 +43,8 @@
 }
 
 #rock {
-  width:50px;
-  height:40px;
+  width:85px;
+  height:78px;
   background:url(images/alien.png);
   margin:20px auto;
 }
@@ -88,6 +88,10 @@
   right:958px;
 }
 
+#laser[data-column='6'] {
+  opacity:0.5;
+}
+
 #ship[data-column='1'] {
   top:480px;
   right:450px;
@@ -113,9 +117,28 @@
   right:930px;
 }
 
+#rock[data-column='1'] {
+}
+
+#rock[data-column='2'] {
+}
+
+#rock[data-column='3'] {
+}
+
+#rock[data-column='4'] {
+}
+
+#rock[data-column='5'] {
+}
+
+#rock[data-column='6'] {
+  opacity:0.5;
+}
+
 .stats-box {
   width:600px;
-  height:200px;
+  height:150px;
   border:1px solid black;
   margin-top:40px;
 }
@@ -125,7 +148,7 @@
   height:120px;
   border-radius:200px;
   border:1px solid black;
-  margin-top:20px;
+  margin-top:10px;
   margin-bottom:10px;
   margin-right:20px;
   font-size:30px;
@@ -145,19 +168,23 @@
   margin-right:70px;
   justify-content:center;
   float:right;
-  margin-top:50px;
+  margin-top:40px;
 }
 
 .instruction {
   width:150px;
-  height:190px;
+  height:130px;
   border:1px solid black;
-  font-size:20px;
-  text-align:center;
+  font-size:16px;
   margin-right:70px;
+  margin-top:20px;
   float:right;
+  line-height:20px;
 }
 
+span {
+  font-weight:bold;
+}
 
 /*.player {
   width:100%;
