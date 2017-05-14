@@ -101,7 +101,7 @@ $(document).ready(function() {
   var pixel = 75;
 
   document.addEventListener('keydown', function(event) {
-    setInterval(function() {
+
       if (event.which === 32) {
         var laserTop = document.querySelector('#laser').style.top;
 
@@ -113,12 +113,15 @@ $(document).ready(function() {
 
             setInterval(function() {
               alert(`Alien invader destroyed! \nYour time is ${timer.textContent}`);
-            }, 200);
+            }, 1000);
+          } else {
+            setInterval(function() {
+              alert("You missed! Also out of ammo. Try again!");
+            }, 1000);
           }
         })();
-
       }
-    }, 250);
+
   });
 
 
