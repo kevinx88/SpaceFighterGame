@@ -6,28 +6,34 @@ $(document).ready(function() {
   var shipCol = document.querySelectorAll('.ship-col');
   var spaceCol = document.querySelectorAll('.space-col');
   var rock = document.querySelector('#rock');
+  var start = document.querySelector('.start-game');
+
 
   /*---------- Main Game Section ----------*/
   laser.setAttribute('data-column', '1');
   ship.setAttribute('data-column', '1');
+  rock.setAttribute('data-column', '6');
 
-  var turnNo = 0;
+  start.addEventListener('click', function() {
 
-  var interval = setInterval(function() {
-    turnNo += 1;
+    var turnNo = 0;
 
-    if (turnNo === 5) {          //code style here learned
-      clearInterval(interval);   //from stackoverflow
-    }                            //
+    var interval = setInterval(function() {
+      turnNo += 1;
 
-    var randomNo = Math.floor(Math.random() * 5);
-    spaceCol[randomNo].appendChild(rock);
+      if (turnNo === 5) {          //code style here learned
+        clearInterval(interval);   //from stackoverflow
+      }                            //
 
-    var laserPosition = document.querySelector('#laser').getAttribute('data-column');
-    var n = document.querySelector('#rock').parentNode.id[6];
-    rock.setAttribute('data-column', n);
-  }, 50);
+      var randomNo = Math.floor(Math.random() * 5);
+      spaceCol[randomNo].appendChild(rock);
 
+      var laserPosition = document.querySelector('#laser').getAttribute('data-column');
+      var n = document.querySelector('#rock').parentNode.id[6];
+      rock.setAttribute('data-column', n);
+    }, 700);
+
+  });
 
 
   document.addEventListener('keydown', function(event) {
@@ -49,17 +55,13 @@ $(document).ready(function() {
       ship.setAttribute('data-column', col);
     }
   });
-
-
-
   /*---------- End of Main Game Section ----------*/
 
 
 
-  var start = document.querySelector('.start-game');
-  var player = document.querySelector('.player');
-  var turn = document.querySelector('.turn');
-  var score = document.querySelector('.score');
+  // var player = document.querySelector('.player');
+  // var turn = document.querySelector('.turn');
+  // var score = document.querySelector('.score');
 
   var timer = document.querySelector('.timer');
   var time = 0;
@@ -90,63 +92,33 @@ $(document).ready(function() {
 
           time += 1;
           timer.textContent = timeToStr(time);
-        }, 10);
+        }, 100);
       }
 
   });
-
-
-/*
-  $(document).on('keydown', function(event) {
-
-      setInterval(function() {
-
-        if (event.which === 32) {
-
-          var laserLimit = $('#laser').css('top');
-          // while (parseInt(laserLimit) > 0) {
-
-            $('#laser').animate({
-              'top': '-=50px'
-            });
-
-          //   laserLimit = parseInt(laserLimit) + parseInt(laserLimit) + '';
-          // }
-
-        }
-      }, 50);
-
-  });
-*/
 
 
   var pixel = 75;
 
   document.addEventListener('keydown', function(event) {
-
     setInterval(function() {
-
       if (event.which === 32) {
-
         var laserTop = document.querySelector('#laser').style.top;
 
         document.querySelector('#laser').setAttribute('style', `top:${pixel}px`);
 
-        onImpact();
+        (function onImpact() {
+          if (6 - parseInt(document.querySelector('#laser').getAttribute('data-column')) === parseInt(document.querySelector('#rock').getAttribute('data-column'))) {
+            laser.setAttribute('data-column', '6');
+
+            setInterval(function() {
+              alert(`Alien invader destroyed! \nYour time is ${timer.textContent}`);
+            }, 200);
+          }
+        })();
 
       }
-    }, 50);
-
-
-
-    var alienPosition = document.querySelector('#rock').getAttribute('data-column');
-
-    function onImpact() {
-      if (6 - parseInt(document.querySelector('#laser').getAttribute('data-column')) === parseInt(document.querySelector('#rock').getAttribute('data-column'))) {
-        laser.setAttribute('data-column', '6');
-      }
-    }
-
+    }, 250);
   });
 
 

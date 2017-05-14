@@ -1,3 +1,7 @@
+body {
+  background-color:#778899;
+}
+
 .wrapper {
   /*width:100%;*/
   /*height:100%;*/
@@ -133,7 +137,7 @@
 }
 
 #rock[data-column='6'] {
-  opacity:0.5;
+  opacity:0;
 }
 
 .stats-box {
@@ -173,11 +177,11 @@
 
 .instruction {
   width:150px;
-  height:130px;
+  height:120px;
   border:1px solid black;
   font-size:16px;
   margin-right:70px;
-  margin-top:20px;
+  margin-top:10px;
   float:right;
   line-height:20px;
 }
