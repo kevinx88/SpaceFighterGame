@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var interval = setInterval(function() {
       turnNo += 1;
 
-      if (turnNo === 10) {          //code style here learned
+      if (turnNo === 50) {          //code style here learned
         clearInterval(interval);   //from stackoverflow
       }                            //
 
@@ -131,9 +131,19 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         })();
       }
-
   });
 
-
-
 });
+
+
+
+(function onImpact() {
+  if (parseInt(laser.getAttribute('data-column')) === parseInt(invader.getAttribute('data-column'))) {
+    laser.setAttribute('data-column', '6');
+    invader.style.opacity = '0';
+
+    setInterval(function() {
+      alert(`Alien invader destroyed! \n\nYour time is ${timer.textContent}`);
+    }, 1500);
+  }
+})();
