@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var interval = setInterval(function() {
       turnNo += 1;
 
-      if (turnNo === 50) {          //code style here learned
+      if (turnNo === 100) {          //code style here learned
         clearInterval(interval);   //from stackoverflow
       }                            //
 
