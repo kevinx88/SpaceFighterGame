@@ -1,4 +1,6 @@
-$(document).ready(function() {
+'use strict';
+
+document.addEventListener('DOMContentLoaded', function() {
 
 
   var ship = document.querySelector('#ship');
