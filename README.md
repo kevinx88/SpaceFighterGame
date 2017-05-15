@@ -1,5 +1,5 @@
 # Project #1: Space Fighter Game
-Repo: https://git.generalassemb.ly/uxnivek8/palmarius-project-1
+Repo: https://uxnivek8.github.io/project-1/
 
 Presentation: https://docs.google.com/presentation/d/1ODmVbYv8tACMh2rhos7EqqTKq10rpSGXC9sr5sV2YJo/edit#slide=id.g1f4cdf2e5e_0_246
 
