@@ -21,7 +21,7 @@ $(document).ready(function() {
     var interval = setInterval(function() {
       turnNo += 1;
 
-      if (turnNo === 5) {          //code style here learned
+      if (turnNo === 10) {          //code style here learned
         clearInterval(interval);   //from stackoverflow
       }                            //
 
@@ -110,14 +110,19 @@ $(document).ready(function() {
         (function onImpact() {
           if (6 - parseInt(document.querySelector('#laser').getAttribute('data-column')) === parseInt(document.querySelector('#rock').getAttribute('data-column'))) {
             laser.setAttribute('data-column', '6');
+            rock.style.opacity = '0';
+
+            var expl = document.createElement('div');
+            expl.setAttribute('id', 'expl');
+            rock.parentNode.replaceChild(expl , rock);
 
             setInterval(function() {
               alert(`Alien invader destroyed! \nYour time is ${timer.textContent}`);
-            }, 1000);
+            }, 1500);
           } else {
             setInterval(function() {
-              alert("You missed! Also out of ammo. Try again!");
-            }, 1000);
+              alert("You missed! \nTry again!");
+            }, 1500);
           }
         })();
       }

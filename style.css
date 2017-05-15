@@ -1,5 +1,8 @@
 body {
-  background-color:#778899;
+  background:url(images/space_invader_wall.png);
+  background-size:120%;
+  background-color:light grey;
+  font-family:'Press Start 2P', cursive;
 }
 
 .wrapper {
@@ -13,7 +16,9 @@ body {
   width:100%;
   margin-top:20px;
   margin-right:40px;
-  border:1px solid black;
+  /*border:1px solid black;*/
+  background:url(images/space.gif);
+  background-color:#FFF;
   display:flex;
   flex-flow:row wrap;
 }
@@ -22,102 +27,118 @@ body {
   order:1;
   height:400px;
   width:100%;
-  border:1px solid black;
+  /*border:1px solid black;*/
   display:flex;
 }
 
 .row-two {
   order:2;
-  height:100px;
+  height:130px;
   width:100%;
-  border:1px solid black;
+  /*border:1px solid black;*/
   display:flex;
 }
 
 .space-col {
   width:20%;
   height:100%;
-  border:1px solid black;
+  /*border:1px solid black;*/
 }
 
 .ship-col {
   width:20%;
   height:100%;
-  border:1px solid black;
+  /*border:1px solid black;*/
 }
 
 #rock {
-  width:85px;
-  height:78px;
-  background:url(images/alien.png);
-  margin:20px auto;
+  width:200px;
+  height:200px;
+  background:url(images/space_invader.png);
+  background-repeat:no-repeat;
+  background-size:50%;
 }
 
 #ship {
-  width:60px;
-  height:30px;
-  background-color:black;
+  width:80px;
+  height:130px;
+  background:url(images/fighterspr1.png);
+  background-repeat:no-repeat;
+  background-size:80%;
   position:absolute;
 }
 
 #laser {
-  width:3px;
-  height:30px;
-  background-color:black;
+  width:20px;
+  height:50px;
+  background:url(images/laser.png);
+  background-repeat:no-repeat;
+  background-size:100%;
   position:absolute;
 }
 
+#expl {
+  width:200px;
+  height:200px;
+  background:url(images/expl.gif);
+  background-repeat:no-repeat;
+  background-size:100%;
+  position:absolute;
+  top:60px;
+  right:576px;
+}
+
 #laser[data-column='1'] {
-  top:460px;
-  right:478px;
+  top:420px;
+  right:488px;
 }
 
 #laser[data-column='2'] {
-  top:460px;
-  right:598px;
+  top:420px;
+  right:608px;
 }
 
 #laser[data-column='3'] {
-  top:460px;
-  right:718px;
+  top:420px;
+  right:728px;
 }
 
 #laser[data-column='4'] {
-  top:460px;
-  right:838px;
+  top:420px;
+  right:848px;
 }
 
 #laser[data-column='5'] {
-  top:460px;
-  right:958px;
+  top:420px;
+  right:968px;
 }
 
 #laser[data-column='6'] {
-  opacity:0.5;
+  opacity:0;
 }
 
 #ship[data-column='1'] {
-  top:480px;
+  top:435px;
   right:450px;
 }
 
 #ship[data-column='2'] {
-  top:480px;
+  top:435px;
   right:570px;
 }
 
 #ship[data-column='3'] {
-  top:480px;
+  top:435px;
   right:690px;
 }
 
 #ship[data-column='4'] {
-  top:480px;
+  top:435px;
   right:810px;
 }
 
 #ship[data-column='5'] {
-  top:480px;
+  top:435px;
   right:930px;
 }
 
@@ -142,20 +163,21 @@ body {
 
 .stats-box {
   width:600px;
-  height:150px;
+  height:140px;
   border:1px solid black;
-  margin-top:40px;
+  margin-top:35px;
 }
 
 .start-game {
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   border-radius:200px;
   border:1px solid black;
-  margin-top:10px;
+  margin-top:0px;
   margin-bottom:10px;
-  margin-right:20px;
-  font-size:30px;
+  margin-right:10px;
+  font-size:25px;
+  color:rgb(222,216,90);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -165,28 +187,31 @@ body {
 .timer {
   width:150px;
   height:60px;
-  border:1px solid black;
-  font-size:30px;
+  /*border:1px solid black;*/
+  font-size:25px;
+  color:rgb(18,48,177);
   display:flex;
   align-items:center;
   margin-right:70px;
+  margin-top:20px;
   justify-content:center;
   float:right;
-  margin-top:40px;
 }
 
 .instruction {
   width:150px;
   height:120px;
-  border:1px solid black;
-  font-size:16px;
+  /*border:1px solid black;*/
+  font-size:10px;
+  color:rgb(113,230,235);
   margin-right:70px;
-  margin-top:10px;
+  margin-top:0;
   float:right;
   line-height:20px;
 }
 
 span {
+  font-size:10px;
   font-weight:bold;
 }
 
