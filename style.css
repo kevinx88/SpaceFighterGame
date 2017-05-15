@@ -164,24 +164,30 @@ body {
 .stats-box {
   width:600px;
   height:140px;
-  border:1px solid black;
   margin-top:35px;
 }
 
 .start-game {
-  width:130px;
-  height:130px;
-  border-radius:200px;
-  border:1px solid black;
+  width:100px;
+  height:100px;
+  border-radius:100%;
+  border: 1px solid rgba(68, 32, 54, 1);
   margin-top:0px;
   margin-bottom:10px;
   margin-right:10px;
-  font-size:25px;
+  font-size:22px;
   color:rgb(222,216,90);
+  /*Gameboy style button code borrowed from AntonEssenetial on Codepen*/
+  background-color:rgb(133, 50, 108);
+  box-shadow: inset 1px 2px 4px #A87493,
+	-1px -1px 2px #000000,
+	3px 6px 7px rgba(125, 136, 134, 0.79);
+  /*Gameboy style button code borrowed from AntonEssenetial on Codepen*/
   display:flex;
   align-items:center;
   justify-content:center;
   float:right;
+  padding:5px;
 }
 
 .timer {
@@ -213,6 +219,13 @@ body {
 span {
   font-size:10px;
   font-weight:bold;
+}
+
+#press-start {
+  position:absolute;
+  top:290px;
+  right:620px;
+  color:#FFF;
 }
 
 /*.player {

@@ -7,6 +7,7 @@ $(document).ready(function() {
   var spaceCol = document.querySelectorAll('.space-col');
   var rock = document.querySelector('#rock');
   var start = document.querySelector('.start-game');
+  var pressStart = document.querySelector('#press-start');
 
 
   /*---------- Main Game Section ----------*/
@@ -15,6 +16,8 @@ $(document).ready(function() {
   rock.setAttribute('data-column', '6');
 
   start.addEventListener('click', function() {
+
+    pressStart.remove();
 
     var turnNo = 0;
 
@@ -117,11 +120,11 @@ $(document).ready(function() {
             rock.parentNode.replaceChild(expl , rock);
 
             setInterval(function() {
-              alert(`Alien invader destroyed! \nYour time is ${timer.textContent}`);
+              alert(`Alien invader destroyed! \n\nYour time is ${timer.textContent}`);
             }, 1500);
           } else {
             setInterval(function() {
-              alert("You missed! \nTry again!");
+              alert("You Lose! Try again");
             }, 1500);
           }
         })();
