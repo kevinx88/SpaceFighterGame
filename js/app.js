@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var laserPosition = document.querySelector('#laser').getAttribute('data-column');
       var n = document.querySelector('#rock').parentNode.id[6];
       rock.setAttribute('data-column', n);
-    }, 700);
+    }, 300);
 
   });
 
@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
             expl.setAttribute('id', 'expl');
             rock.parentNode.replaceChild(expl , rock);
 
-            setInterval(function() {
+            setTimeout(function() {
               alert(`Alien invader destroyed! \n\nYour time is ${timer.textContent}`);
             }, 1500);
           } else {
-            setInterval(function() {
+            setTimeout(function() {
               alert("You Lose! Try again");
             }, 1500);
           }
@@ -134,16 +134,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
-
-
-
-(function onImpact() {
-  if (parseInt(laser.getAttribute('data-column')) === parseInt(invader.getAttribute('data-column'))) {
-    laser.setAttribute('data-column', '6');
-    invader.style.opacity = '0';
-
-    setInterval(function() {
-      alert(`Alien invader destroyed! \n\nYour time is ${timer.textContent}`);
-    }, 1500);
-  }
-})();
