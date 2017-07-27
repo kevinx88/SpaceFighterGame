@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
       turnNo += 1;
 
       if (turnNo === 100) {          //code style here learned
-        clearInterval(interval);   //from stackoverflow
-      }                            //
+        clearInterval(interval);     //from stackoverflow
+      }                              //
 
       var randomNo = Math.floor(Math.random() * 5);
       spaceCol[randomNo].appendChild(rock);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var laserPosition = document.querySelector('#laser').getAttribute('data-column');
       var n = document.querySelector('#rock').parentNode.id[6];
       rock.setAttribute('data-column', n);
-    }, 300);
+  }, 1000);
 
   });
 
@@ -122,11 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
             rock.parentNode.replaceChild(expl , rock);
 
             setTimeout(function() {
-              alert(`Alien invader destroyed! \n\nYour time is ${timer.textContent}`);
+              alert(`\nAlien invader destroyed! \nYour time is ${timer.textContent}`);
             }, 1500);
           } else {
             setTimeout(function() {
-              alert("You Lose! Try again");
+              alert("You Missed! Try again");
             }, 1500);
           }
         })();

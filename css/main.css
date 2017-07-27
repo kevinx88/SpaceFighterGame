@@ -1,14 +1,12 @@
 body {
-  background:url(../images/space_invader_wall.png);
+  /*background:url(../images/space_invader_wall.png);*/
   background-size:120%;
-  background-color:light grey;
+  background-color:#aaaaaa;
   font-family:'Press Start 2P', cursive;
 }
 
 .wrapper {
-  /*width:100%;*/
-  /*height:100%;*/
-  max-width:600px;
+  max-width:800px;
   margin:0 auto;
 }
 
@@ -16,7 +14,6 @@ body {
   width:100%;
   margin-top:20px;
   margin-right:40px;
-  /*border:1px solid black;*/
   background:url(../images/space.gif);
   background-color:#FFF;
   display:flex;
@@ -26,37 +23,36 @@ body {
 .row-one {
   order:1;
   height:400px;
-  width:100%;
-  /*border:1px solid black;*/
+  width:70%;
   display:flex;
+  margin-left:180px;
 }
 
 .row-two {
   order:2;
   height:130px;
   width:100%;
-  /*border:1px solid black;*/
   display:flex;
 }
 
 .space-col {
   width:20%;
   height:100%;
-  /*border:1px solid black;*/
 }
 
 .ship-col {
   width:20%;
   height:100%;
-  /*border:1px solid black;*/
 }
 
 #rock {
-  width:200px;
-  height:200px;
+  margin-top:45px;
+  width:150px;
+  height:150px;
   background:url(../images/space_invader.png);
   background-repeat:no-repeat;
   background-size:50%;
+  positin:absolute;
 }
 
 #ship {
@@ -90,27 +86,27 @@ body {
 
 #laser[data-column='1'] {
   top:420px;
-  right:488px;
+  right:538px;
 }
 
 #laser[data-column='2'] {
   top:420px;
-  right:608px;
+  right:628px;
 }
 
 #laser[data-column='3'] {
   top:420px;
-  right:728px;
+  right:748px;
 }
 
 #laser[data-column='4'] {
   top:420px;
-  right:848px;
+  right:868px;
 }
 
 #laser[data-column='5'] {
   top:420px;
-  right:968px;
+  right:988px;
 }
 
 #laser[data-column='6'] {
@@ -119,27 +115,27 @@ body {
 
 #ship[data-column='1'] {
   top:435px;
-  right:450px;
+  right:500px;
 }
 
 #ship[data-column='2'] {
   top:435px;
-  right:570px;
+  right:590px;
 }
 
 #ship[data-column='3'] {
   top:435px;
-  right:690px;
+  right:710px;
 }
 
 #ship[data-column='4'] {
   top:435px;
-  right:810px;
+  right:830px;
 }
 
 #ship[data-column='5'] {
   top:435px;
-  right:930px;
+  right:950px;
 }
 
 #rock[data-column='1'] {
@@ -172,9 +168,10 @@ body {
   height:100px;
   border-radius:100%;
   border: 1px solid rgba(68, 32, 54, 1);
-  margin-top:0px;
+  margin-top:10px;
   margin-bottom:10px;
-  margin-right:10px;
+  margin-right:-100px;
+  margin-left:20px;
   font-size:22px;
   color:rgb(222,216,90);
   /*Gameboy style button code borrowed from AntonEssenetial on Codepen*/
@@ -193,7 +190,6 @@ body {
 .timer {
   width:150px;
   height:60px;
-  /*border:1px solid black;*/
   font-size:25px;
   color:rgb(18,48,177);
   display:flex;
@@ -205,10 +201,9 @@ body {
 }
 
 .instruction {
-  width:150px;
+  width:200px;
   height:120px;
-  /*border:1px solid black;*/
-  font-size:10px;
+  font-size:12px;
   color:rgb(113,230,235);
   margin-right:70px;
   margin-top:0;
@@ -223,9 +218,11 @@ span {
 
 #press-start {
   position:absolute;
-  top:290px;
-  right:620px;
+  top:280px;
+  left:49%;
+  right:49%;
   color:#FFF;
+  line-height:1.3;
 }
 
 /*.player {
